@@ -115,3 +115,17 @@ a.a-group-clipboard {
     background-color: #fdb540;
     color: #ffffff;
 }
+
+.dv-passcode-code {
+    border: 1px solid #fdb540;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.dv-passcode-full {
+    background-color: #fdb540;
+}
