@@ -71,6 +71,7 @@ UI.doShowPasswords = function (isFirst) {
 };
 
 UI.populateGroup = function(groupIndex){
+    var showedCount = 0;
     var group = Passwork.data.groups[groupIndex];
 
     $("#h1-group-title").html(group.name);
@@ -78,7 +79,7 @@ UI.populateGroup = function(groupIndex){
     $("#ul-group-passwords").html("");
 
     group.passwords.forEach(function (element, key, array) {
-
+        showedCount++;
         var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+"</a><a href='#' class='a-group-clipboard'><span class='glyphicon glyphicon-copy' data-key='" + key + "'></span></a></li>");
         var underPL = $("<div class='collapse li-group-password' id='li-group-under-"+key+"'>"+
             element.getPassword() +
@@ -89,6 +90,11 @@ UI.populateGroup = function(groupIndex){
         $("#ul-group-passwords").append(underPL);
 
     });
+
+    if(showedCount==0){
+        $("#ul-group-passwords").append( $("<li class='list-group-item'>No Passwords Available in this Group</li>") );
+        $("#ul-group-passwords").append( $("<li class='list-group-item'><a href='#'>Go Back</a></li>").on("click",function(){UI.onBackPressed();}) );
+    }
 
     $(".a-group-clipboard").on("click",function(){
 
