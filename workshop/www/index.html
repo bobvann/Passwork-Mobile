@@ -17,31 +17,19 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand">
                 <span class="glyphicon glyphicon-chevron-left" id="img-menu-back" style="display: none"></span>
                 <img alt="Passwork" src="img/logo-passwork.png">
             </a>
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#" id="btn-menu-logout">Log Out</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
+        <div class="menu-button">
+            <span class="glyphicon glyphicon-log-out" id="btn-menu-logout"></span>
+        </div>
     </div><!-- /.container-fluid -->
 </nav>
 
 <div class="container">
+
     <div class="page" id="page-login" style="display:none">
 
         <h1 class="text-center">Log In</h1>
@@ -72,7 +60,9 @@
     <div class="page" id="page-passcode" style="display:none">
         <h1 class="text-center">Enter Passcode</h1>
 
-        <div class="row text-center">
+        <input type="password" class="im-passcode">
+
+        <div class="text-center">
             <div class="col-xs-4">
                 <div class="dv-passcode-number">1</div>
                 <div class="dv-passcode-number">4</div>
@@ -121,6 +111,7 @@
 <script type="text/javascript" src="js/libs/jquery.js"></script>
 <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/App.js"></script>
+
 
 
 </body>

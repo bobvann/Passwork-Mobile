@@ -87,3 +87,31 @@ a.a-group-clipboard {
     border: 1px solid #fdb540;
     border-radius: 4px;
 }
+
+
+/*new menu*/
+
+.menu-button {
+    float: right;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+
+/* style for passcode */
+.dv-passcode-number {
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 1px solid #fdb540;
+    height: 70px;
+    width: 70px;
+    font-size: 20px;
+    line-height: 70px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.dv-passcode-number:active {
+    background-color: #fdb540;
+    color: #ffffff;
+}
