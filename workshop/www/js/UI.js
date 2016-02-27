@@ -89,6 +89,7 @@ UI.populateGroup = function(groupIndex){
         var p = group.passwords[k].getPassword();
 
         cordova.plugins.clipboard.copy(p);
+        Dialogs.showShortBottomToast("Your password has been copied to your clipboard");
     })
 };
 

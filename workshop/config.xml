@@ -23,5 +23,7 @@
         <preference name="StatusBarStyle" value="lightcontent" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <preference name="DisallowOverscroll" value="true" />
     </platform>
+
 </widget>
