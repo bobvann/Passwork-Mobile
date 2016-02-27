@@ -4,12 +4,13 @@
 App = {};
 
 App.totalScriptsLoaded = 0;
-App.TOTAL_SCRIPTS = 9;
+App.TOTAL_SCRIPTS = 10;
 
 App.init = function(){
     App.loadScript("js/libs/jquery.js",function(){
         App.totalScriptsLoaded++;
 
+        App.loadScript("js/Utils.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/UI.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Data.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Passwork.js", function(){App.totalScriptsLoaded++;});
