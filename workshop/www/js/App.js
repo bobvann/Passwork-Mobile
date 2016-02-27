@@ -63,23 +63,27 @@ App.onDeviceReady = function(){
 };
 
 App.showPasswords = function(){
-//after security checks
-    touchid.checkSupport(function(){
-        //supporting touch ID
-        touchid.authenticate(function(){
-            //touch ID success
-            console.log("touch id passed");
-            UI.doShowPasswords();
+    if(Utils.getDevice() == Utils.DEVICES.IOS){
+        touchid.checkSupport(function(){
+            //supporting touch ID
+            touchid.authenticate(function(){
+                //touch ID success
+                console.log("touch id passed");
+                UI.doShowPasswords();
+            }, function(){
+                //TODO touch id failed
+                //TOOD gestire meglio
+                App.showPasswords();
+            }, "Passwork Mobile");
         }, function(){
-            //TODO touch id failed
-            //TOOD gestire meglio
-            App.showPasswords();
-        }, "Passwork Mobile");
-    }, function(){
-        //not supporting touch ID
-        console.log("touch ID not supported, trying alternative security checks");
+            //not supporting touch ID
+            console.log("touch ID not supported, trying alternative security checks");
+            App.alternativeSecurityCheck();
+        });
+    }else{
         App.alternativeSecurityCheck();
-    });
+    }
+
 };
 
 App.alternativeSecurityCheck = function(){
