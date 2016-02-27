@@ -1,5 +1,5 @@
-input{
-    border:2px solid black;
+input {
+    border: 2px solid black;
 }
 
 .page {
@@ -14,9 +14,17 @@ input{
     margin-bottom: 20px;
 }
 
-.navbar-brand>img {
-    max-width: 30px;
-    float: left;
+.navbar-brand > img {
+    max-width: 300px;
     max-height: 30px;
-    margin-top: -5px;
+    margin-top: 7px;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
 }
