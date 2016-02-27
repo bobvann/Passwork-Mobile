@@ -13,9 +13,11 @@ UI.pagesWithBack = ["group"];
 UI.showFirstPage = function (page) {
     $("#page-" + page).css("display", "");
     UI.currentPage = page;
+
+    $("#page-" + page).addClass('animated fadeInUpBig');
 };
 
-UI.switchPage = function (page) {
+UI.switchPage = function (page, back) {
     $("#page-" + UI.currentPage).css("display", "none");
     $("#page-" + page).css("display", "");
     UI.currentPage = page;
@@ -25,12 +27,19 @@ UI.switchPage = function (page) {
     }else{
         $(".img-menu-back").css("display","none");
     }
+
+    if(back){
+        $("#page-" + page).addClass('animated fadeInRightBig');
+    }else{
+        $("#page-" + page).addClass('animated fadeInLeftBig');
+    }
+
 };
 
 UI.onBackPressed = function(){
     switch(UI.currentPage){
         case 'group':
-            UI.switchPage("main");
+            UI.switchPage("main",true);
             break;
     }
 };

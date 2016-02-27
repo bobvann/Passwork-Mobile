@@ -75,3 +75,15 @@ a.a-group-clipboard {
     margin-top: -4px;
     color: #fdb540;
 }
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #FFF;
+    text-align: center;
+    background-color: #fdb540;
+    border: 1px solid #fdb540;
+    border-radius: 4px;
+}
