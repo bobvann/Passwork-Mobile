@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "088108EA8565381741D1BDEFF19301E5EAA4630D+++712AC6D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "088108EA8565381741D1BDEFF19301E5EAA4630D+++712AC6D" : 0,
+    "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++2FAA658" : 0,
+    "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++228226C" : 0,
+    "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++15991F1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A21CA3B7-0CB7-49FA-A496-B0C6CA6A8467",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "088108EA8565381741D1BDEFF19301E5EAA4630D+++712AC6D" : "Passwork-Mobile\/",
+    "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++2FAA658" : "Passwork-Mobile\/workshop\/www\/js\/passwork-js\/",
+    "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++228226C" : "Passwork-Mobile\/workshop\/platforms\/ios\/www\/js\/passwork-js\/",
+    "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++15991F1" : "Passwork-Mobile\/workshop\/www\/js\/passwork-js\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Passwork Mobile",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "workshop\/platforms\/ios\/Passwork Mobile.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/garakh\/passwork-js.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++15991F1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/garakh\/passwork-js.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++228226C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/garakh\/passwork-js.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "003F31CC6E28805E42E81FBB67BFE2F386464F7F+++2FAA658"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bobvann\/Passwork-Mobile.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "088108EA8565381741D1BDEFF19301E5EAA4630D+++712AC6D"
+    }
+  ]
+}
