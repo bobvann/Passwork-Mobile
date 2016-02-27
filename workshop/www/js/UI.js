@@ -45,6 +45,10 @@ $("#btn-login-submit").on("click", function () {
     );
 });
 
+$(".li-group-item").on("click",function(el){
+    console.log(el);
+});
+
 
 
 

@@ -65,24 +65,6 @@
 </nav>
 
 <div class="container">
-    <div class="page" id="page-main" style="display:none">
-        <h1 class="text-center">Welcome!</h1>
-
-        <p>statico</p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#1" aria-expanded="false" aria-controls="1">
-            Mostra Password
-        </button>
-        <div class="collapse" id="1">
-            <div class="well">
-                password
-            </div>
-        </div>
-
-        <p>dinamico</p>
-        <ul class="list-group" id="ul-main-groups">
-        </ul>
-    </div>
-
     <div class="page" id="page-login" style="display:none">
 
         <h1 class="text-center">Log In</h1>
@@ -106,8 +88,34 @@
 
 
         <button type="button" class="btn btn-primary center-block btn-lg" id="btn-login-submit">LogIn</button>
+    </div>
 
+    <div class="page" id="page-passcode" style="display:none">
+        <h1 class="text-center">Enter Passcode</h1>
 
+    </div>
+
+    <div class="page" id="page-main" style="display:none">
+        <h1 class="text-center">Your Passwords!</h1>
+
+        <ul class="list-group" id="ul-main-groups">
+        </ul>
+    </div>
+
+    <div class="page" id="page-group" style="display:none">
+        <h1 class="text-center" id="h1-group-title"</h1>
+
+        <p>statico</p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#target1" aria-expanded="false" aria-controls="1">
+            Mostra Password
+        </button>
+        <div class="collapse" id="target1">
+            <div class="well">
+                password
+            </div>
+        </div>
+
+        <p>dinamico</p>
     </div>
 </div>
 
