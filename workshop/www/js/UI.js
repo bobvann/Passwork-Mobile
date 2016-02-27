@@ -22,7 +22,7 @@ UI.switchPage = function (page) {
 UI.doShowPasswords = function () {
     Passwork.data.groups.forEach(function (element, key, array) {
 
-        var passwordList = $("<li class='list-group-item' data-key='"+ key +"'>"+ element.name +"</li>");
+        var passwordList = $("<li class='list-group-item li-group-item' data-key='"+ key +"'>"+ element.name +"</li>");
 
         $("#ul-main-groups").append(passwordList);
 

@@ -4,12 +4,13 @@
 App = {};
 
 App.totalScriptsLoaded = 0;
-App.TOTAL_SCRIPTS = 9;
+App.TOTAL_SCRIPTS = 10;
 
 App.init = function(){
     App.loadScript("js/libs/jquery.js",function(){
         App.totalScriptsLoaded++;
 
+        App.loadScript("js/Utils.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/UI.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Data.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Passwork.js", function(){App.totalScriptsLoaded++;});
@@ -29,12 +30,13 @@ App.bindEvents = function(){
 };
 
 App.onDeviceReady = function(){
-    console.log("Device Ready");
 
     if(App.totalScriptsLoaded < App.TOTAL_SCRIPTS){
         setTimeout(App.onDeviceReady, 20);
         return;
     }
+
+    console.log("Device Ready");
 
     if(Data.isLoginDone()){
         //login done, show passwords
@@ -61,23 +63,27 @@ App.onDeviceReady = function(){
 };
 
 App.showPasswords = function(){
-//after security checks
-    touchid.checkSupport(function(){
-        //supporting touch ID
-        touchid.authenticate(function(){
-            //touch ID success
-            console.log("touch id passed");
-            UI.doShowPasswords();
+    if(Utils.getDevice() == Utils.DEVICES.IOS){
+        touchid.checkSupport(function(){
+            //supporting touch ID
+            touchid.authenticate(function(){
+                //touch ID success
+                console.log("touch id passed");
+                UI.doShowPasswords();
+            }, function(){
+                //TODO touch id failed
+                //TOOD gestire meglio
+                App.showPasswords();
+            }, "Passwork Mobile");
         }, function(){
-            //TODO touch id failed
-            //TOOD gestire meglio
-            App.showPasswords();
-        }, "Passwork Mobile");
-    }, function(){
-        //not supporting touch ID
-        console.log("touch ID not supported, trying alternative security checks");
+            //not supporting touch ID
+            console.log("touch ID not supported, trying alternative security checks");
+            App.alternativeSecurityCheck();
+        });
+    }else{
         App.alternativeSecurityCheck();
-    });
+    }
+
 };
 
 App.alternativeSecurityCheck = function(){
