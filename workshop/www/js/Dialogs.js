@@ -36,3 +36,27 @@ Dialogs.confirm = function(title, message, yesCallback){
         ["OK","Cancel"]     // buttonLabels
     );
 };
+
+/**
+ * shows a short toast at the bottom of the app
+ * @param message the message to be shown
+ */
+Dialogs.showShortBottomToast = function(message){
+
+    window.plugins.toast.showWithOptions(
+        {
+            message: message,
+            duration: "short",
+            position: "bottom",
+            //addPixelsY: -40  // added a negative value to move it up a bit (default 0)
+            styling: {
+                opacity: 0.5, // 0.0 (transparent) to 1.0 (opaque). Default 0.8
+                backgroundColor: '#fdb540', // make sure you use #RRGGBB. Default #333333
+                textColor: '#FFFFFF', // Ditto. Default #FFFFFF
+                cornerRadius: 16, // minimum is 0 (square). iOS default 20, Android default 100
+                horizontalPadding: 20, // iOS default 16, Android default 50
+                verticalPadding: 16 // iOS default 12, Android default 30
+            }
+        }
+    );
+};
