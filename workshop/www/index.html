@@ -36,9 +36,23 @@
         <title>Passwork Mobile</title>
     </head>
     <body>
-        <ul id="groups">
+        <div class="page" id="page-main" style="display:none">
+            welcome, you are logged!
+            <ul id="ul-main-groups">
+            </ul>
+        </div>
+        <div class="page" id="page-login" style="display:none">
+            please log in
+            <br/>
+            <input type="text" name="username" id="txt-login-username" placeholder="email"/>
+            <br/>
+            <input type="password" name="password" id="txt-login-password" placeholder="password" />
+            <br />
+            <input type="password" name="secretkey" id="txt-login-secretkey" placeholder="secret key" />
+            <br />
+            <a id="btn-login-submit" href="#"/>Log In</a>
+        </div>
 
-        </ul>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/App.js"></script>

@@ -5,7 +5,9 @@ App = {};
 
 App.init = function(){
     App.loadScript("js/libs/jquery.js",function(){
-        App.loadScript("js/AjaxManager.js");
+        App.loadScript("js/UI.js");
+        App.loadScript("js/Data.js");
+        App.loadScript("js/Passwork.js");
         App.loadScript("js/passwork-js/api.js");
         App.loadScript("js/passwork-js/crypt.js");
         App.loadScript("js/passwork-js/storage.js");
@@ -14,13 +16,6 @@ App.init = function(){
 
         App.bindEvents();
     });
-
-    setTimeout(function(){
-        App.loadScript("js/passwork-js/example.js");
-    },200);
-
-
-
 
 
 
@@ -33,21 +28,56 @@ App.bindEvents = function(){
 App.onDeviceReady = function(){
     console.log("Device Ready");
 
+    if(Data.isLoginDone()){
+        //login done, show passwords
+        //after passing data
+        var loginData = Data.getLogin();
+        Passwork.login(loginData[0], loginData[1], loginData[2],
+            function(){
+                //login was ok
+                App.showPasswords();
+            },
+            function(){
+                //login failed
+                alert("FATAL ERROR");
+                //TODO gestire questa situazione (al momento torna al login)
+                UI.showFirstPage("login");
+            }
+        );
+    }else{
+        //login not done
+        UI.showFirstPage("login");
+    }
+
+
+};
+
+App.showPasswords = function(){
+//after security checks
     touchid.checkSupport(function(){
         //supporting touch ID
         touchid.authenticate(function(){
             //touch ID success
-            alert("yess! successo");
+            console.log("touch id passed");
+            UI.doShowPasswords();
         }, function(){
-            alert("touch ID fallito");
-        }, "testo di prova");
+            //TODO touch id failed
+            //TOOD gestire meglio
+            App.showPasswords();
+        }, "Passwork Mobile");
     }, function(){
         //not supporting touch ID
-
-        alert("touch ID non supportato");
+        console.log("touch ID not supported, trying alternative security checks");
+        App.alternativeSecurityCheck();
     });
 };
 
+App.alternativeSecurityCheck = function(){
+    //TODO fare davvero controllo di sicurezza con codice
+    UI.doShowPasswords();
+};
+
+//util
 App.loadScript = function(file, callback){
     var script = document.createElement('script');
     script.type = 'text/javascript';
@@ -58,3 +88,18 @@ App.loadScript = function(file, callback){
 };
 
 App.init();
+
+
+
+setTimeout(function(){
+    if(touchid == undefined){
+        console.log("debug mode");
+        //debug
+        touchid = {};
+        touchid.checkSupport=function(cb1,cb2){cb2()};
+        touchid.authenticate=function(cb1,cb2,msg){cb2();};
+
+       App.onDeviceReady();
+    }
+
+},1500);
