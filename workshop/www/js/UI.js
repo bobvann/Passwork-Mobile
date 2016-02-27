@@ -146,6 +146,11 @@ UI.init = function(){
     });
 
 
+    $(".dv-passcode-number").on("click",function(){
+        var nr = $(this).html();
+        Passcode.pressButton(nr);
+    });
+
     //TODO rimuovere!!!
     $("#btn-pierocerone").on("click",function(){
         $("#txt-login-password").val("Skatefighter_93");

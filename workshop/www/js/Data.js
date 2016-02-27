@@ -29,6 +29,14 @@ Data.getSecretKey = function(){
     return localStorage.getItem("PassworkMobile_SecretKey");
 };
 
+Data.setPasscode = function(passcode){
+    localStorage.setItem("PassworkMobile_Passcode",passcode);
+};
+
+Data.getPasscode = function(){
+    return localStorage.getItem("PassworkMobile_Passcode");
+};
+
 Data.logout = function(){
     localStorage.clear();
 };

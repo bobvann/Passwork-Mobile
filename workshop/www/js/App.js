@@ -4,12 +4,14 @@
 App = {};
 
 App.totalScriptsLoaded = 0;
-App.TOTAL_SCRIPTS = 11;
+App.TOTAL_SCRIPTS = 12;
 
 
 App.logout = function(){
-    Data.logout();
-    location.reload(true);
+    Dialog.confirm("Passwork","Are you sure you want to logout?",function(){
+        Data.logout();
+        location.reload(true);
+    });
 };
 
 App.init = function(){
@@ -29,6 +31,7 @@ App.init = function(){
         App.loadScript("js/UI.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Data.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Dialogs.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/Passcode.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Passwork.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/passwork/libs/aes.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/passwork/libs/base32.js", function(){App.totalScriptsLoaded++;});
