@@ -6,6 +6,12 @@ App = {};
 App.totalScriptsLoaded = 0;
 App.TOTAL_SCRIPTS = 10;
 
+
+App.logout = function(){
+    Data.logout();
+    location.reload(true);
+};
+
 App.init = function(){
     App.loadScript("js/libs/jquery.js",function(){
         App.totalScriptsLoaded++;
@@ -27,7 +33,7 @@ App.init = function(){
 
 App.bindEvents = function(){
     document.addEventListener('deviceready', App.onDeviceReady, false);
-    document.addEventListener('onbackpressed',App.onBackPressed,false);
+    document.addEventListener('backbutton',App.onBackPressed,false);
 };
 
 App.onBackPressed = function () {

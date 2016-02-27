@@ -28,3 +28,7 @@ Data.getLogin = function(){
 Data.getSecretKey = function(){
     return localStorage.getItem("PassworkMobile_SecretKey");
 };
+
+Data.logout = function(){
+    localStorage.clear();
+};
