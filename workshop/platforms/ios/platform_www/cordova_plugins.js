@@ -7,14 +7,6 @@ module.exports = [
         "clobbers": [
             "touchid"
         ]
-    },
-    {
-        "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
-        "id": "cordova-plugin-statusbar.statusbar",
-        "pluginId": "cordova-plugin-statusbar",
-        "clobbers": [
-            "window.StatusBar"
-        ]
     }
 ];
 module.exports.metadata = 

@@ -7,13 +7,10 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.bobvann.passwork"
-        },
         "cordova-plugin-touchid": {
             "PACKAGE_NAME": "com.bobvann.passwork"
         },
-        "cordova-plugin-statusbar": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.bobvann.passwork"
         }
     },

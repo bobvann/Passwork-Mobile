@@ -28,26 +28,32 @@ UI.doShowPasswords = function () {
 
     });
 
+    $(".li-group-item").on("click",function(el){
+        console.log($(this).attr("data-key"));
+    });
+
     UI.switchPage("main");
 
 };
 
-$("#btn-login-submit").on("click", function () {
-    Passwork.login($("#txt-login-username").val(), $("#txt-login-password").val(), $("#txt-login-secretkey").val(),
-        function () {
-            //login was ok
-            App.showPasswords();
-        },
-        function () {
-            //login failed
-            alert("login failed");
-        }
-    );
-});
+UI.init = function(){
+    $("#btn-login-submit").on("click", function () {
+        Passwork.login($("#txt-login-username").val(), $("#txt-login-password").val(), $("#txt-login-secretkey").val(),
+            function () {
+                //login was ok
+                App.showPasswords();
+            },
+            function () {
+                //login failed
+                alert("login failed");
+            }
+        );
+    });
 
-$(".li-group-item").on("click",function(el){
-    console.log(el);
-});
+
+
+};
+
 
 
 

@@ -15,10 +15,9 @@
 		3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */; };
 		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
-		DEFBE7B510FF4109A0873678 /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 275297AE49AF45E7AE958122 /* TouchID.m */; };
-		DEE085BACEB049809E9B8601 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED46131DB2E4FD28A1A9DD4 /* LocalAuthentication.framework */; };
-		A7DF788249624C16A9484208 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372ACB97FA6F4436BCDE04A8 /* Security.framework */; };
-		248BE042710E461185A64FDD /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7E4D2FDD0F412EACDA4809 /* CDVStatusBar.m */; };
+		318ADA76B34D43D4B2EFDA6A /* TouchID.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D5D7344B1348E6ABB96937 /* TouchID.m */; };
+		8F3135856E5E4DAC9B46AFE4 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C899034AEA5C4A22969A84DA /* LocalAuthentication.framework */; };
+		BC0C000661834323A9A3D820 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876DD286D9A8477EB707CE30 /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +57,10 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Passwork Mobile/config.xml"; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		275297AE49AF45E7AE958122 /* TouchID.m */ = {isa = PBXFileReference; name = "TouchID.m"; path = "cordova-plugin-touchid/TouchID.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		CE6617AA3BEE4BA08E76885C /* TouchID.h */ = {isa = PBXFileReference; name = "TouchID.h"; path = "cordova-plugin-touchid/TouchID.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		DED46131DB2E4FD28A1A9DD4 /* LocalAuthentication.framework */ = {isa = PBXFileReference; name = "LocalAuthentication.framework"; path = "System/Library/Frameworks/LocalAuthentication.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		372ACB97FA6F4436BCDE04A8 /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		6D7E4D2FDD0F412EACDA4809 /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		29D187FB2BA34CC1A54F371E /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		58D5D7344B1348E6ABB96937 /* TouchID.m */ = {isa = PBXFileReference; name = "TouchID.m"; path = "cordova-plugin-touchid/TouchID.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		74AB77932A664C879DB5000D /* TouchID.h */ = {isa = PBXFileReference; name = "TouchID.h"; path = "cordova-plugin-touchid/TouchID.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		C899034AEA5C4A22969A84DA /* LocalAuthentication.framework */ = {isa = PBXFileReference; name = "LocalAuthentication.framework"; path = "System/Library/Frameworks/LocalAuthentication.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		876DD286D9A8477EB707CE30 /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +69,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				DEE085BACEB049809E9B8601 /* LocalAuthentication.framework in Frameworks */,
-				A7DF788249624C16A9484208 /* Security.framework in Frameworks */,
+				8F3135856E5E4DAC9B46AFE4 /* LocalAuthentication.framework in Frameworks */,
+				BC0C000661834323A9A3D820 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +140,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DED46131DB2E4FD28A1A9DD4 /* LocalAuthentication.framework */,
-				372ACB97FA6F4436BCDE04A8 /* Security.framework */,
+				C899034AEA5C4A22969A84DA /* LocalAuthentication.framework */,
+				876DD286D9A8477EB707CE30 /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,10 +167,8 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				275297AE49AF45E7AE958122 /* TouchID.m */,
-				CE6617AA3BEE4BA08E76885C /* TouchID.h */,
-				6D7E4D2FDD0F412EACDA4809 /* CDVStatusBar.m */,
-				29D187FB2BA34CC1A54F371E /* CDVStatusBar.h */,
+				58D5D7344B1348E6ABB96937 /* TouchID.m */,
+				74AB77932A664C879DB5000D /* TouchID.h */,
 			);
 			name = Plugins;
 			path = "Passwork Mobile/Plugins";
@@ -288,8 +283,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				DEFBE7B510FF4109A0873678 /* TouchID.m in Sources */,
-				248BE042710E461185A64FDD /* CDVStatusBar.m in Sources */,
+				318ADA76B34D43D4B2EFDA6A /* TouchID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

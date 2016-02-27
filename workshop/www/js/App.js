@@ -36,6 +36,7 @@ App.onDeviceReady = function(){
         return;
     }
 
+    UI.init();
     console.log("Device Ready");
 
     if(Data.isLoginDone()){
