@@ -18,6 +18,9 @@
         },
         "com.verso.cordova.clipboard": {
             "PACKAGE_NAME": "com.bobvann.passwork"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.bobvann.passwork"
         }
     },
     "dependent_plugins": {}

@@ -66,4 +66,12 @@ input {
     padding: 10px 15px;
     margin-bottom: -1px;
     border: 1px solid #ddd;
+    max-height: 42px !important;
+}
+
+a.a-group-clipboard {
+    float: right;
+    font-size: 23px;
+    margin-top: -4px;
+    color: #fdb540;
 }
