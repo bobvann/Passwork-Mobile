@@ -8,6 +8,8 @@ UI = {};
 
 UI.currentPage = '';
 
+UI.pagesWithBack = ["group"];
+
 UI.showFirstPage = function (page) {
     $("#page-" + page).css("display", "");
     UI.currentPage = page;
@@ -17,11 +19,15 @@ UI.switchPage = function (page) {
     $("#page-" + UI.currentPage).css("display", "none");
     $("#page-" + page).css("display", "");
     UI.currentPage = page;
+
+    if(UI.pagesWithBack.indexOf(page)>-1){
+        $(".img-menu-back").css("display","");
+    }else{
+        $(".img-menu-back").css("display","none");
+    }
 };
 
 UI.onBackPressed = function(){
-    alert("back pressed");
-
     switch(UI.currentPage){
         case 'group':
             UI.switchPage("main");
@@ -99,6 +105,10 @@ UI.init = function(){
     $("#btn-menu-logout").on("click",function(){
        App.logout();
     });
+
+    $(".img-menu-back").on("click",function(){
+        UI.onBackPressed();
+    })
 
 
 };
