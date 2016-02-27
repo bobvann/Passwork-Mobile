@@ -66,6 +66,7 @@ UI.populateGroup = function(groupIndex){
 
 UI.init = function(){
     $("#btn-login-submit").on("click", function () {
+        //TODO controllare che tutti i campi siano compilati
         Passwork.login($("#txt-login-username").val(), $("#txt-login-password").val(), $("#txt-login-secretkey").val(),
             function () {
                 //login was ok
@@ -73,11 +74,14 @@ UI.init = function(){
             },
             function () {
                 //login failed
-                alert("login failed");
+                Dialogs.info("Login Failed. Please check your credentials");
             }
         );
     });
 
+    $("#btn-menu-logout").on("click",function(){
+       App.logout();
+    });
 
 
 };

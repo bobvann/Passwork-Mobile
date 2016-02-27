@@ -4,7 +4,7 @@
 App = {};
 
 App.totalScriptsLoaded = 0;
-App.TOTAL_SCRIPTS = 10;
+App.TOTAL_SCRIPTS = 11;
 
 
 App.logout = function(){
@@ -19,6 +19,7 @@ App.init = function(){
         App.loadScript("js/Utils.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/UI.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Data.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/Dialogs.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Passwork.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/passwork/api.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/passwork/crypt.js", function(){App.totalScriptsLoaded++;});
