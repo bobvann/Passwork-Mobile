@@ -64,10 +64,10 @@ UI.populateGroup = function(groupIndex){
     group.passwords.forEach(function (element, key, array) {
 
         var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+"</a></li>");
-        var underPL = $("<li class='collapse li-group-password' id='li-group-under-"+key+"'>"+
+        var underPL = $("<div class='collapse li-group-password' id='li-group-under-"+key+"'>"+
             element.getPassword() +
-            "<span class='ic-group-clipboard' class=' glyphicon glyphicon-copy' data-key='" + key + "'></span>" +
-            "</li>");
+            "<a href='#' class='a-group-clipboard'><span class='glyphicon glyphicon-copy' data-key='" + key + "'></span></a>" +
+            "</div>");
 
         $("#ul-group-passwords").append(passwordList);
         $("#ul-group-passwords").append(underPL);
