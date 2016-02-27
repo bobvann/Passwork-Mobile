@@ -13,3 +13,10 @@ input{
 .input-group {
     margin-bottom: 20px;
 }
+
+.navbar-brand>img {
+    max-width: 30px;
+    float: left;
+    max-height: 30px;
+    margin-top: -5px;
+}

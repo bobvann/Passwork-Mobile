@@ -44,6 +44,10 @@ App.onDeviceReady = function(){
     UI.init();
     console.log("Device Ready");
 
+    if(Utils.getDevice()==Utils.DEVICES.IOS){
+        $(".navbar").css("padding-top","15px");
+    }
+
     if(Data.isLoginDone()){
         //login done, show passwords
         //after passing data
