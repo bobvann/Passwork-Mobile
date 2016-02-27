@@ -23,9 +23,9 @@ UI.switchPage = function (page, back) {
     UI.currentPage = page;
 
     if(UI.pagesWithBack.indexOf(page)>-1){
-        $(".img-menu-back").css("display","");
+        $("#img-menu-back").css("display","");
     }else{
-        $(".img-menu-back").css("display","none");
+        $("#img-menu-back").css("display","none");
     }
 
     if(back){
