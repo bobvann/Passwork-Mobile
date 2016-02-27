@@ -108,9 +108,17 @@ UI.init = function(){
 
     $(".img-menu-back").on("click",function(){
         UI.onBackPressed();
+    });
+
+
+    //TODO rimuovere!!!
+    $("#btn-pierocerone").on("click",function(){
+        $("#txt-login-password").val("Skatefighter_93");
+        $("#txt-login-secretkey").val("Skatefighter_93");
+        $("#txt-login-username").val("pieroometto93@gmail.com");
+
+        $("#btn-login-submit").click();
     })
-
-
 };
 
 
