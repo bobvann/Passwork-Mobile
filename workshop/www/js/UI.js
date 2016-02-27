@@ -19,6 +19,16 @@ UI.switchPage = function (page) {
     UI.currentPage = page;
 };
 
+UI.onBackPressed = function(){
+    alert("back pressed");
+
+    switch(UI.currentPage){
+        case 'group':
+            UI.switchPage("main");
+            break;
+    }
+};
+
 UI.doShowPasswords = function () {
     Passwork.data.groups.forEach(function (element, key, array) {
 
@@ -29,10 +39,28 @@ UI.doShowPasswords = function () {
     });
 
     $(".li-group-item").on("click",function(el){
-        console.log($(this).attr("data-key"));
+        UI.populateGroup($(this).attr("data-key"));
+
+        UI.switchPage("group");
     });
 
     UI.switchPage("main");
+
+};
+
+UI.populateGroup = function(groupIndex){
+    var group = Passwork.data.groups[groupIndex];
+
+    $("#h1-group-title").html(group.name);
+
+    group.passwords.forEach(function (element, key, array) {
+
+        var passwordList = $("<li class='list-group-item' data-key='"+ key +"'>"+ element.name +"</li>");
+
+        $("#ul-group-passwords").append(passwordList);
+
+    });
+
 
 };
 

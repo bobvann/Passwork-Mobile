@@ -27,6 +27,11 @@ App.init = function(){
 
 App.bindEvents = function(){
     document.addEventListener('deviceready', App.onDeviceReady, false);
+    document.addEventListener('onbackpressed',App.onBackPressed,false);
+};
+
+App.onBackPressed = function () {
+  UI.onBackPressed();
 };
 
 App.onDeviceReady = function(){
@@ -36,6 +41,7 @@ App.onDeviceReady = function(){
         return;
     }
 
+    UI.init();
     console.log("Device Ready");
 
     if(Data.isLoginDone()){
