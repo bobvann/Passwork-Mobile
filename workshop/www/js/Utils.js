@@ -15,3 +15,7 @@ Utils.getDevice = function(){
         return Utils.DEVICES.WPHONE;
     }
 };
+
+Utils.stringNullOrEmpty = function(msg){
+    return msg==null || msg=='';
+};
