@@ -151,6 +151,10 @@ UI.init = function(){
         Passcode.pressButton(nr);
     });
 
+    $("#btn-passcode-delete").on("click",function(){
+        Passcode.deleteButton();
+    });
+
     //TODO rimuovere!!!
     $("#btn-pierocerone").on("click",function(){
         $("#txt-login-password").val("Skatefighter_93");
