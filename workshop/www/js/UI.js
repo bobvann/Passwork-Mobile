@@ -59,15 +59,24 @@ UI.populateGroup = function(groupIndex){
 
     $("#h1-group-title").html(group.name);
 
+    $("#ul-group-passwords").html("");
+
     group.passwords.forEach(function (element, key, array) {
 
         var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+"</a></li>");
-        var underPL = $("<li class='collapse li-group-password' id='li-group-under-"+key+"'>"+element.getPassword() +"</li>");
+        var underPL = $("<li class='collapse li-group-password' id='li-group-under-"+key+"'>"+
+            element.getPassword() +
+            "<a class='a-group-clipboard' href='#'><span class=' glyphicon glyphicon-copy' data-key='" + key + "'></span></a>" +
+            "</li>");
 
         $("#ul-group-passwords").append(passwordList);
         $("#ul-group-passwords").append(underPL);
 
     });
+
+    $(".a-group-clipboard").on("click",function(){
+        console.log( $(this).attr("data-key") );
+    })
 };
 
 UI.init = function(){
