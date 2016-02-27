@@ -15,6 +15,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.bobvann.passwork"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.bobvann.passwork"
         }
     },
     "dependent_plugins": {}
