@@ -14,7 +14,9 @@ UI.showFirstPage = function (page) {
     $("#page-" + page).css("display", "");
     UI.currentPage = page;
 
-    $("#page-" + page).addClass('animated fadeInUpBig');
+
+    $("#page-" + page).animateCss('fadeInUpBig');
+
 };
 
 UI.switchPage = function (page, back) {
@@ -29,9 +31,9 @@ UI.switchPage = function (page, back) {
     }
 
     if(back){
-        $("#page-" + page).addClass('animated fadeInRightBig');
+        $("#page-" + page).animateCss('fadeInLeftBig');
     }else{
-        $("#page-" + page).addClass('animated fadeInLeftBig');
+        $("#page-" + page).animateCss('fadeInRightBig');
     }
 
 };
@@ -134,7 +136,7 @@ UI.init = function(){
        App.logout();
     });
 
-    $(".img-menu-back").on("click",function(){
+    $("#img-menu-back").on("click",function(){
         UI.onBackPressed();
     });
 

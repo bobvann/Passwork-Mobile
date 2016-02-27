@@ -16,6 +16,15 @@ App.init = function(){
     App.loadScript("js/libs/jquery.js",function(){
         App.totalScriptsLoaded++;
 
+        $.fn.extend({
+            animateCss: function (animationName) {
+                var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+                    $(this).removeClass('animated ' + animationName);
+                });
+            }
+        });
+
         App.loadScript("js/Utils.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/UI.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Data.js", function(){App.totalScriptsLoaded++;});
