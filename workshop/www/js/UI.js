@@ -63,10 +63,10 @@ UI.populateGroup = function(groupIndex){
 
     group.passwords.forEach(function (element, key, array) {
 
-        var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+"</a></li>");
+        var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+"</a><a href='#' class='a-group-clipboard'><span class='glyphicon glyphicon-copy' data-key='" + key + "'></span></a></li>");
         var underPL = $("<div class='collapse li-group-password' id='li-group-under-"+key+"'>"+
             element.getPassword() +
-            "<a href='#' class='a-group-clipboard'><span class='glyphicon glyphicon-copy' data-key='" + key + "'></span></a>" +
+            "" +
             "</div>");
 
         $("#ul-group-passwords").append(passwordList);
@@ -75,8 +75,11 @@ UI.populateGroup = function(groupIndex){
     });
 
     $(".a-group-clipboard").on("click",function(){
-        console.log( this );
-        console.log( "ehi" );
+
+        var k = $(this.children[0]).attr("data-key");
+        var p = group.passwords[k].getPassword();
+
+        cordova.plugins.clipboard.copy(p);
     })
 };
 
