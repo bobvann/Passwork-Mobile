@@ -32,7 +32,7 @@ var PWStorage = function(options){
 
        
       
-    }
+    };
     
     this.set = function(key, value, cb){
        //  init();
@@ -46,7 +46,7 @@ var PWStorage = function(options){
              cb && cb(key);   
         },1)
        
-    }    
+    };
     
     var init = function(cb){
         if(db)
@@ -55,5 +55,5 @@ var PWStorage = function(options){
         
        
     }
-}
+};
 

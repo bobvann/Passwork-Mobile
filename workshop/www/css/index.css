@@ -14,12 +14,6 @@ input {
     margin-bottom: 20px;
 }
 
-.navbar-brand > img {
-    max-width: 300px;
-    max-height: 30px;
-    margin-top: 7px;
-}
-
 .navbar-brand {
     position: absolute;
     width: 100%;
@@ -27,4 +21,19 @@ input {
     top: 0;
     text-align: center;
     margin: auto;
+}
+
+.navbar-brand > span {
+    left: 18px;
+    padding: 0;
+    position: absolute;
+    line-height: 48px;
+    color: #888;
+}
+
+.navbar-brand > img {
+    max-width: 300px;
+    max-height: 30px;
+    margin: auto;
+    margin-top: -5px;
 }

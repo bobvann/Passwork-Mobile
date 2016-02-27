@@ -6,7 +6,7 @@ var PWCrypt = function(creds) {
         pwd = pwd ? pwd : creds.crypto;
         var result = base32.encode(CryptoJS.AES.encrypt(data, pwd).toString());
         return result;
-    }
+    };
 
     var decode = function(data, pwd) {
         pwd = pwd ? pwd : creds.crypto;
@@ -17,13 +17,13 @@ var PWCrypt = function(creds) {
         catch (e) {
             return null;
         }
-    }
+    };
 
     this.parsePassword = function(data, groupPassword) {
         var groupPassword = decode(groupPassword);
         data.getPassword = function() {
             return decode(this.cryptedPassword, groupPassword);
-        }
+        };
 
         data.getCustom = function() {
             if (!data.custom)
@@ -36,7 +36,7 @@ var PWCrypt = function(creds) {
                 };
             });
         }
-    }
+    };
 
     this.parseGroup = function(data) {
         var self = this;
@@ -57,4 +57,4 @@ var PWCrypt = function(creds) {
                 return el;
             });
     }
-}
+};

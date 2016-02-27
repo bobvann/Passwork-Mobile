@@ -15,7 +15,7 @@ var PWCachedTransport = function(transport, storage){
                 });
             });
         });
-    }
+    };
 
     this.getData = function(cb){
         
@@ -24,7 +24,7 @@ var PWCachedTransport = function(transport, storage){
                 save(data);
             });
         });
-    }
+    };
     
     for(var i in transport){
         if( (typeof transport[i] === 'function') && !this[i])
@@ -34,4 +34,4 @@ var PWCachedTransport = function(transport, storage){
                 }
             }();
     }
-}    
+};

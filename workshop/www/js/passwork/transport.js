@@ -81,7 +81,7 @@ var PWTransport = function(creds) {
         request('getData', {}, function(data) {
             cb && cb(data);
         });
-    }
+    };
     
     this.login = function(cb){
         openSession(function(session){
@@ -90,4 +90,4 @@ var PWTransport = function(creds) {
             cb(false);
         });
     }
-}
+};

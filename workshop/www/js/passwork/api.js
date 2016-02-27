@@ -16,9 +16,9 @@ var PWApi = function(transport, crypt) {
 
             cb(data);
         });
-    }
+    };
     
     this.login = function(cb){
         transport.login(cb);
     }
-}
+};
