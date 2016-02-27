@@ -57,6 +57,7 @@ App.onDeviceReady = function(){
 
     if(Utils.getDevice()==Utils.DEVICES.IOS){
         $(".navbar").css("padding-top","15px");
+        $(".navbar-brand").css("top","15px");
     }
 
     if(Data.isLoginDone()){
