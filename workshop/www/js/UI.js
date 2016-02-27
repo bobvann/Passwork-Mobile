@@ -44,7 +44,7 @@ UI.onBackPressed = function(){
     }
 };
 
-UI.doShowPasswords = function () {
+UI.doShowPasswords = function (isFirst) {
     Passwork.data.groups.forEach(function (element, key, array) {
 
         var passwordList = $("<li class='list-group-item li-group-item' data-key='"+ key +"'>"+ element.name +"</li>");
@@ -59,7 +59,12 @@ UI.doShowPasswords = function () {
         UI.switchPage("group");
     });
 
-    UI.switchPage("main");
+    if(isFirst){
+        UI.showFirstPage("main");
+    }else{
+        UI.switchPage("main");
+    }
+
 
 };
 

@@ -67,7 +67,7 @@ App.onDeviceReady = function(){
         Passwork.login(loginData[0], loginData[1], loginData[2],
             function(){
                 //login was ok
-                App.showPasswords();
+                App.showPasswords(true);
             },
             function(){
                 //login failed
@@ -84,33 +84,33 @@ App.onDeviceReady = function(){
 
 };
 
-App.showPasswords = function(){
+App.showPasswords = function(isFirst){
     if(Utils.getDevice() == Utils.DEVICES.IOS){
         touchid.checkSupport(function(){
             //supporting touch ID
             touchid.authenticate(function(){
                 //touch ID success
                 console.log("touch id passed");
-                UI.doShowPasswords();
+                UI.doShowPasswords(isFirst);
             }, function(){
                 //TODO touch id failed
                 //TOOD gestire meglio
-                App.showPasswords();
+                App.showPasswords(isFirst);
             }, "Passwork Mobile");
         }, function(){
             //not supporting touch ID
             console.log("touch ID not supported, trying alternative security checks");
-            App.alternativeSecurityCheck();
+            App.alternativeSecurityCheck(isFirst);
         });
     }else{
-        App.alternativeSecurityCheck();
+        App.alternativeSecurityCheck(isFirst);
     }
 
 };
 
-App.alternativeSecurityCheck = function(){
+App.alternativeSecurityCheck = function(isFirst){
     //TODO fare davvero controllo di sicurezza con codice
-    UI.doShowPasswords();
+    UI.doShowPasswords(isFirst);
 };
 
 //util
