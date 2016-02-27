@@ -108,7 +108,6 @@ UI.populateGroup = function(groupIndex){
 
 UI.init = function(){
     $("#btn-login-submit").on("click", function () {
-        //TODO controllare che tutti i campi siano compilati
         var username=$("#txt-login-username").val(),
             password=$("#txt-login-password").val(),
             secretkey=$("#txt-login-secretkey").val();
