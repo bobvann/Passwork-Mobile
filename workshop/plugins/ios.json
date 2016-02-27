@@ -7,9 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.bobvann.passwork"
-        },
         "cordova-plugin-touchid": {
             "PACKAGE_NAME": "com.bobvann.passwork"
         },
