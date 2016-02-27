@@ -21,6 +21,10 @@ App.init = function(){
         App.loadScript("js/Data.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Dialogs.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/Passwork.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/libs/aes.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/libs/base32.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/libs/json2.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/libs/md5.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/passwork/api.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/passwork/crypt.js", function(){App.totalScriptsLoaded++;});
         App.loadScript("js/passwork/storage.js", function(){App.totalScriptsLoaded++;});

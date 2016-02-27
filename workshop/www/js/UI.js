@@ -55,19 +55,36 @@ UI.populateGroup = function(groupIndex){
 
     group.passwords.forEach(function (element, key, array) {
 
-        var passwordList = $("<li class='list-group-item' data-key='"+ key +"'>"+ element.name +"</li>");
+        var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+"</a></li>");
+        var underPL = $("<li class='collapse li-group-password' id='li-group-under-"+key+"'>"+element.getPassword() +"</li>");
 
         $("#ul-group-passwords").append(passwordList);
+        $("#ul-group-passwords").append(underPL);
 
     });
-
-
 };
 
 UI.init = function(){
     $("#btn-login-submit").on("click", function () {
         //TODO controllare che tutti i campi siano compilati
-        Passwork.login($("#txt-login-username").val(), $("#txt-login-password").val(), $("#txt-login-secretkey").val(),
+        var username=$("#txt-login-username").val(),
+            password=$("#txt-login-password").val(),
+            secretkey=$("#txt-login-secretkey").val();
+
+        if(Utils.stringNullOrEmpty(username)){
+            Dialogs.info("Please fill up your email");
+            return;
+        }
+        if(Utils.stringNullOrEmpty(password)){
+            Dialogs.info("Please fill up your password");
+            return;
+        }
+        if(Utils.stringNullOrEmpty(secretkey)){
+            Dialogs.info("Please fill up your secret key");
+            return;
+        }
+
+        Passwork.login(username, password, secretkey,
             function () {
                 //login was ok
                 App.showPasswords();
