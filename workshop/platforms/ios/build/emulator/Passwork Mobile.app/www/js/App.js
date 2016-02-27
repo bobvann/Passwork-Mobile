@@ -8,11 +8,11 @@ App.init = function(){
         App.loadScript("js/UI.js");
         App.loadScript("js/Data.js");
         App.loadScript("js/Passwork.js");
-        App.loadScript("js/passwork-js/api.js");
-        App.loadScript("js/passwork-js/crypt.js");
-        App.loadScript("js/passwork-js/storage.js");
-        App.loadScript("js/passwork-js/transport.js");
-        App.loadScript("js/passwork-js/transport-cached.js");
+        App.loadScript("js/passwork/api.js");
+        App.loadScript("js/passwork/crypt.js");
+        App.loadScript("js/passwork/storage.js");
+        App.loadScript("js/passwork/transport.js");
+        App.loadScript("js/passwork/transport-cached.js");
 
         App.bindEvents();
     });

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/bob/Projects/Passwork-Mobile/workshop/platforms/ios/CordovaLib/Classes/Public/CDVConfigParser.m \
-  /Users/bob/Projects/Passwork-Mobile/workshop/platforms/ios/CordovaLib/Classes/Public/CDVConfigParser.h
+  /Users/piero/Documents/Progetti/Passwork-Mobile-Bob/workshop/platforms/ios/CordovaLib/Classes/Public/CDVConfigParser.m \
+  /Users/piero/Documents/Progetti/Passwork-Mobile-Bob/workshop/platforms/ios/CordovaLib/Classes/Public/CDVConfigParser.h

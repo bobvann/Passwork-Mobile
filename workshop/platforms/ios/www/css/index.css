@@ -1,3 +1,15 @@
 input{
     border:2px solid black;
 }
+
+.page {
+    margin-top: 71px;
+}
+
+.input-group-addon {
+    min-width: 100px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}

@@ -3,21 +3,24 @@
  */
 App = {};
 
+App.totalScriptsLoaded = 0;
+App.TOTAL_SCRIPTS = 9;
+
 App.init = function(){
     App.loadScript("js/libs/jquery.js",function(){
-        App.loadScript("js/UI.js");
-        App.loadScript("js/Data.js");
-        App.loadScript("js/Passwork.js");
-        App.loadScript("js/passwork-js/api.js");
-        App.loadScript("js/passwork-js/crypt.js");
-        App.loadScript("js/passwork-js/storage.js");
-        App.loadScript("js/passwork-js/transport.js");
-        App.loadScript("js/passwork-js/transport-cached.js");
+        App.totalScriptsLoaded++;
+
+        App.loadScript("js/UI.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/Data.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/Passwork.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/api.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/crypt.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/storage.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/transport.js", function(){App.totalScriptsLoaded++;});
+        App.loadScript("js/passwork/transport-cached.js", function(){App.totalScriptsLoaded++;});
 
         App.bindEvents();
     });
-
-
 
 };
 
@@ -27,6 +30,11 @@ App.bindEvents = function(){
 
 App.onDeviceReady = function(){
     console.log("Device Ready");
+
+    if(App.totalScriptsLoaded < App.TOTAL_SCRIPTS){
+        setTimeout(App.onDeviceReady, 20);
+        return;
+    }
 
     if(Data.isLoginDone()){
         //login done, show passwords

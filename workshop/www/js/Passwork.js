@@ -10,7 +10,7 @@ Passwork.login = function(email,password,crypto,okCallback,failCallback){
         'email' : email,
         'password' : password,
         'crypto' : crypto,
-        'url' : 'https://passwork.me/',
+        'url' : 'https://passwork.me/'
     };
 
     var storage = new PWStorage({});

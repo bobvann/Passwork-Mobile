@@ -20,6 +20,7 @@
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
+        <preference name="StatusBarStyle" value="lightcontent" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>

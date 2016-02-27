@@ -11,6 +11,10 @@
                         {
                             "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -22,6 +26,9 @@
             "PACKAGE_NAME": "com.bobvann.passwork"
         },
         "cordova-plugin-touchid": {
+            "PACKAGE_NAME": "com.bobvann.passwork"
+        },
+        "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.bobvann.passwork"
         }
     },
@@ -37,6 +44,13 @@
             "id": "cordova-plugin-touchid.TouchID",
             "clobbers": [
                 "touchid"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "clobbers": [
+                "window.StatusBar"
             ]
         }
     ]
