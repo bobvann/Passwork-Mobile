@@ -37,3 +37,8 @@ input {
     margin: auto;
     margin-top: -5px;
 }
+
+.navbar-default .navbar-toggle {
+    border-color: #ddd;
+    z-index: 9999;
+}
