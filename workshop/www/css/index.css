@@ -29,6 +29,7 @@ input {
     position: absolute;
     line-height: 48px;
     color: #888;
+    display: none;
 }
 
 .navbar-brand > img {
