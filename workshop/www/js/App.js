@@ -80,7 +80,7 @@ App.onDeviceReady = function(){
     console.log("Device Ready");
 
     if(Utils.getDevice()==Utils.DEVICES.IOS){
-        $(".navbar").css("padding-top","15px");
+        $(".navbar").css("padding-top","55px");
         $(".navbar-brand").css("top","15px");
     }
 
