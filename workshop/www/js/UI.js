@@ -94,13 +94,13 @@ UI.populateGroup = function(groupIndex){
 
     $("#ul-group-passwords").html("");
 
+
+    //description, name, login, getPassword()
     group.passwords.forEach(function (element, key, array) {
         showedCount++;
-        var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+"</a><a href='#' class='a-group-clipboard'><span class='glyphicon glyphicon-copy' data-key='" + key + "'></span></a></li>");
-        var underPL = $("<div class='collapse li-group-password' id='li-group-under-"+key+"'>"+
-            element.getPassword() +
-            "" +
-            "</div>");
+        var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+" - <span class='sp-group-login'>" + element.login + "</span></a><a href='#' class='a-group-clipboard'><span class='glyphicon glyphicon-copy' data-key='" + key + "'></span></a></li>");
+        var underPL = $("<div class='collapse li-group-password' id='li-group-under-"+key+"'>"+ element.description + "<br/>"+
+            element.getPassword() + "</div>");
 
         $("#ul-group-passwords").append(passwordList);
         $("#ul-group-passwords").append(underPL);
