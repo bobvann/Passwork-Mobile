@@ -16,7 +16,7 @@ Passcode.registerPasscode = function(){
                 Dialogs.showShortBottomToast("You successfully choosed a passcode. Enjoy our app!");
                 Data.setPasscode(passcode2);
                 UI.switchPage("groups");
-                App.showPasswords(true);
+                App.showPasswords(true, true);
 
             }else{
                 Dialogs.showShortBottomToast("Two inserted passcodes do not match. Please try again");

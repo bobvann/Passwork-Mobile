@@ -99,7 +99,13 @@ App.onDeviceReady = function(){
 
 };
 
-App.showPasswords = function(isFirst){
+App.showPasswords = function(isFirst, skipAuth){
+    if(skipAuth){
+        UI.switchPage("groups");
+        UI.doShowPasswords(isFirst);
+        return;
+    }
+
     if(Utils.getDevice() == Utils.DEVICES.IOS){
         touchid.checkSupport(function(){
             //supporting touch ID

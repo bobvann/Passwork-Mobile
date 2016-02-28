@@ -9,6 +9,7 @@ UI = {};
 UI.currentPage = '';
 
 UI.pagesWithBack = ["group"];
+UI.pagesWithLogout = ["main","group"];
 
 UI.showFirstPage = function (page) {
     $("#page-" + page).css("display", "");
@@ -16,6 +17,14 @@ UI.showFirstPage = function (page) {
 
 
     $("#page-" + page).animateCss('fadeInUpBig');
+
+    if(UI.pagesWithLogout.indexOf(page)>-1){
+        $("#btn-menu-logout").css("display","");
+    }else{
+        $("#btn-menu-logout").css("display","none");
+    }
+
+
 
 };
 
@@ -29,6 +38,13 @@ UI.switchPage = function (page, back) {
     }else{
         $("#img-menu-back").css("display","none");
     }
+
+    if(UI.pagesWithLogout.indexOf(page)>-1){
+        $("#btn-menu-logout").css("display","");
+    }else{
+        $("#btn-menu-logout").css("display","none");
+    }
+
 
     if(back){
         $("#page-" + page).animateCss('fadeInLeftBig');
