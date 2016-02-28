@@ -7,16 +7,16 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-touchid": {
-            "PACKAGE_NAME": "com.bobvann.passwork"
-        },
-        "cordova-plugin-whitelist": {
+        "com.verso.cordova.clipboard": {
             "PACKAGE_NAME": "com.bobvann.passwork"
         },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.bobvann.passwork"
         },
-        "com.verso.cordova.clipboard": {
+        "cordova-plugin-touchid": {
+            "PACKAGE_NAME": "com.bobvann.passwork"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.bobvann.passwork"
         },
         "cordova-plugin-x-toast": {
