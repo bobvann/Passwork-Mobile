@@ -8,10 +8,15 @@ App.TOTAL_SCRIPTS = 12;
 
 
 App.logout = function(){
-    Dialog.confirm("Passwork","Are you sure you want to logout?",function(){
+    Dialogs.confirm("Passwork","Are you sure you want to logout?",function(){
         Data.logout();
         location.reload(true);
     });
+};
+
+App.registerPasscode = function(){
+    UI.switchPage("passcode");
+    Passcode.registerPasscode();
 };
 
 App.init = function(){
@@ -79,12 +84,11 @@ App.onDeviceReady = function(){
         Passwork.login(loginData[0], loginData[1], loginData[2],
             function(){
                 //login was ok
+
                 App.showPasswords(true);
             },
             function(){
                 //login failed
-                alert("FATAL ERROR");
-                //TODO gestire questa situazione (al momento torna al login)
                 UI.showFirstPage("login");
             }
         );
@@ -92,7 +96,6 @@ App.onDeviceReady = function(){
         //login not done
         UI.showFirstPage("login");
     }
-
 
 };
 
@@ -105,8 +108,6 @@ App.showPasswords = function(isFirst){
                 console.log("touch id passed");
                 UI.doShowPasswords(isFirst);
             }, function(){
-                //TODO touch id failed
-                //TOOD gestire meglio
                 App.showPasswords(isFirst);
             }, "Passwork Mobile");
         }, function(){
@@ -121,8 +122,16 @@ App.showPasswords = function(isFirst){
 };
 
 App.alternativeSecurityCheck = function(isFirst){
-    //TODO fare davvero controllo di sicurezza con codice
-    UI.doShowPasswords(isFirst);
+    Passcode.setOnCompleteCallback(function(pc){
+        if(Data.checkPasscode(pc)){
+            UI.switchPage("groups");
+            UI.doShowPasswords(isFirst);
+        }else{
+            Passcode.clear();
+            Dialogs.showShortBottomToast("Typed passcode is not correct. Please try again");
+        }
+    });
+    UI.switchPage("passcode");
 };
 
 //util

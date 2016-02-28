@@ -37,6 +37,10 @@ Data.getPasscode = function(){
     return localStorage.getItem("PassworkMobile_Passcode");
 };
 
+Data.checkPasscode = function(pc){
+    return localStorage.getItem("PassworkMobile_Passcode")==pc;
+};
+
 Data.logout = function(){
     localStorage.clear();
 };

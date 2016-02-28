@@ -106,6 +106,7 @@ UI.populateGroup = function(groupIndex){
     })
 };
 
+
 UI.init = function(){
     $("#btn-login-submit").on("click", function () {
         var username=$("#txt-login-username").val(),
@@ -128,7 +129,8 @@ UI.init = function(){
         Passwork.login(username, password, secretkey,
             function () {
                 //login was ok
-                App.showPasswords();
+                App.registerPasscode();
+
             },
             function () {
                 //login failed

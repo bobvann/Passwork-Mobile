@@ -6,6 +6,33 @@ Passcode = {};
 Passcode.stack = [];
 Passcode.onCompleteCallback = undefined;
 
+
+Passcode.registerPasscode = function(){
+    Passcode.setOnCompleteCallback(function(passcode1){
+        Dialogs.showShortBottomToast("Please insert your passcode again");
+        Passcode.clear();
+        Passcode.setOnCompleteCallback(function(passcode2){
+            if(passcode2==passcode1){
+                Dialogs.showShortBottomToast("You successfully choosed a passcode. Enjoy our app!");
+                Data.setPasscode(passcode2);
+                UI.switchPage("groups");
+                App.showPasswords(true);
+
+            }else{
+                Dialogs.showShortBottomToast("Two inserted passcodes do not match. Please try again");
+                Passcode.clear();
+                Passcode.registerPasscode();
+            }
+
+        })
+    });
+};
+
+
+Passcode.clear = function(){
+    Passcode.stack = [];
+    Passcode.updateFilled();
+};
 /**
  * sets up the callback when passcode write has been completed
  * @param cb the function to call when completed, takes one parameter which is 4-characters string containing the passcode
