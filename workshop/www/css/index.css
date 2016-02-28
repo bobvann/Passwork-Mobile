@@ -37,7 +37,7 @@ input {
     padding: 0;
     position: absolute;
     line-height: 48px;
-    color: #888;
+    color: #333;
 }
 
 .navbar-brand > img {
@@ -75,6 +75,7 @@ input {
     padding: 10px 15px;
     margin-bottom: -1px;
     border: 1px solid #ddd;
+    line-height: 35px;
 }
 
 a.a-group-clipboard {
@@ -167,8 +168,35 @@ a.a-group-clipboard {
 
 .bt-passcode-login {
     margin-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .sp-group-login {
     color: #fdb540;
+}
+
+div#page-login > .row {
+    padding-bottom: 15px;
+}
+
+div#page-login > .row > .col-xs-4 > h3 {
+    line-height: 0;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+}
+
+div#page-login {
+    margin-top: 30%;
+}
+
+.collapsing {
+    display: none;
+}
+
+.li-group-password:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }

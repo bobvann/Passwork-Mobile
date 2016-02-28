@@ -15,7 +15,6 @@
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a class="navbar-brand">
                 <span class="glyphicon glyphicon-chevron-left" id="img-menu-back" style="display: none"></span>
@@ -25,13 +24,14 @@
         <div class="menu-button">
             <span class="glyphicon glyphicon-log-out" id="btn-menu-logout" style="display:none"></span>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
 </nav>
 
 <div class="container">
 
     <div class="page" id="page-forgot" style="display: none">
-        <p>If you forgot your passcode, for security reasons you need to log out from your passwork account and log back in, choosing a new passcode</p>
+        <p>If you forgot your passcode, for security reasons you need to log out from your passwork account and log back
+            in, choosing a new passcode</p>
         <ul class="list-group">
             <li class='list-group-item'><a href="#" id="btn-forgot-cancel">Cancel</a></li>
             <li class='list-group-item'><a href="#" id="btn-forgot-confirm">Confirm</a></li>
@@ -39,27 +39,39 @@
     </div>
 
     <div class="page" id="page-login" style="display:none">
-
-        <h3 class="text-center">Email</h3>
-        <input class="form-control" type="text" name="username"
-               id="txt-login-username" placeholder="Email"
-               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-
-
-        <h3 class="text-center">Password</h3>
-        <input class="form-control" type="password" name="password"
-               id="txt-login-password" placeholder="Password">
-
-
-        <h3 class="text-center">SecretKey</h3>
-        <input class="form-control" type="password" name="secretkey"
-               id="txt-login-secretkey" placeholder="Secret Key">
-
-
-        <button type="button" class="btn btn-primary center-block btn-lg bt-passcode-login" id="btn-login-submit">
-            LogIn
-        </button>
-
+        <div class="row">
+            <div class="col-xs-4">
+                <h3>Email</h3>
+            </div>
+            <div class="col-xs-8">
+                <input class="form-control" type="text" name="username"
+                       id="txt-login-username" placeholder="Email"
+                       autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <h3>Password</h3>
+            </div>
+            <div class="col-xs-8">
+                <input class="form-control" type="password" name="password"
+                       id="txt-login-password" placeholder="Password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <h3>SecretKey</h3>
+            </div>
+            <div class="col-xs-8">
+                <input class="form-control" type="password" name="secretkey"
+                       id="txt-login-secretkey" placeholder="Secret Key">
+            </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary center-block btn-lg bt-passcode-login" id="btn-login-submit">
+                LogIn
+            </button>
+        </div>
         <div class="bottom-left text-center dv-passcode-description">
             Once you logged in, you will need to chosse a four-digits passcode. You will need this passcode to log in
             into this app without needing to log in to Passwork again.<br/>
@@ -116,7 +128,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="page" id="page-main" style="display:none">
