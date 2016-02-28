@@ -6,6 +6,8 @@ App = {};
 App.totalScriptsLoaded = 0;
 App.TOTAL_SCRIPTS = 12;
 
+App.touchIdAttempts=0;
+App.MAX_TOUCHID_ATTEMPTS=3;
 
 App.logout = function(){
     Dialogs.confirm("Passwork","Are you sure you want to logout?",function(){
@@ -56,6 +58,11 @@ App.init = function(){
 App.bindEvents = function(){
     document.addEventListener('deviceready', App.onDeviceReady, false);
     document.addEventListener('backbutton',App.onBackPressed,false);
+    document.addEventListener('pause', App.onPause, false);
+};
+
+App.onPause = function(){
+    location.reload(true);
 };
 
 App.onBackPressed = function () {
@@ -114,7 +121,14 @@ App.showPasswords = function(isFirst, skipAuth){
                 console.log("touch id passed");
                 UI.doShowPasswords(isFirst);
             }, function(){
-                App.showPasswords(isFirst);
+                App.touchIdAttempts++;
+
+                if(App.touchIdAttempts<App.MAX_TOUCHID_ATTEMPTS){
+                    App.alternativeSecurityCheck(isFirst);
+                }else{
+                    App.showPasswords(isFirst);
+                }
+
             }, "Passwork Mobile");
         }, function(){
             //not supporting touch ID
