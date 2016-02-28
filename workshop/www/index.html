@@ -30,6 +30,14 @@
 
 <div class="container">
 
+    <div class="page" id="page-forgot" style="display: none">
+        <p>If you forgot your passcode, for security reasons you need to log out from your passwork account and log back in, choosing a new passcode</p>
+        <ul class="list-group">
+            <li class='list-group-item'><a href="#" id="btn-forgot-cancel">Cancel</a></li>
+            <li class='list-group-item'><a href="#" id="btn-forgot-confirm">Confirm</a></li>
+        </ul>
+    </div>
+
     <div class="page" id="page-login" style="display:none">
 
         <h3 class="text-center">Email</h3>
@@ -47,8 +55,6 @@
         <input class="form-control" type="password" name="secretkey"
                id="txt-login-secretkey" placeholder="Secret Key">
 
-
-        <button id="btn-pierocerone">Logga Piero</button>
 
         <button type="button" class="btn btn-primary center-block btn-lg bt-passcode-login" id="btn-login-submit">
             LogIn

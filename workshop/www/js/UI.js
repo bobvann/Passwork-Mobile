@@ -173,14 +173,19 @@ UI.init = function(){
         Passcode.deleteButton();
     });
 
-    //TODO rimuovere!!!
-    $("#btn-pierocerone").on("click",function(){
-        $("#txt-login-password").val("Skatefighter_93");
-        $("#txt-login-secretkey").val("Skatefighter_93");
-        $("#txt-login-username").val("pieroometto93@gmail.com");
+    $("#btn-forgot-cancel").on("click",function(){
+        location.reload();
+    });
 
-        $("#btn-login-submit").click();
-    })
+    $("#btn-forgot-confirm").on("click",function(){
+        Data.logout();
+        location.reload(true);
+    });
+
+    $("#btn-passcode-forgot").on("click",function(){
+        UI.switchPage("forgot");
+    });
+
 };
 
 
