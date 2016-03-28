@@ -1,4 +1,4 @@
-# Dillinger
+# Passwork-Mobile
 
 Unofficial Passwork (https://passwork.me) mobile application.
 Developed using Apache Cordova, supporting all platforms.
