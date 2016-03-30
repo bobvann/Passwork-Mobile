@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <title>Passwork Mobile</title>
 </head>
-<body>
+<body class="background">
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -40,6 +40,42 @@
 
     <div class="page" id="page-login" style="display:none">
         <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+                <form>
+                    <div class="group">
+                        <input type="text" name="username" id="txt-login-username" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Email</label>
+                    </div>
+                    <div class="group">
+                        <input type="password" name="password" id="txt-login-password" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="group">
+                        <input type="password" name="secretkey" id="txt-login-secretkey" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>SecretKey</label>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary center-block btn-lg" id="btn-login-submit">
+                LogIn
+            </button>
+        </div>
+        <div class="bottom-left text-center">
+            Once you logged in, you will need to choose a four-digits passcode. You will need this passcode to log in
+            into this app without needing to log in Passwork again.<br/>
+            If you have an iPhone supporting Touch ID, you can use it to authenticate to the app.
+        </div>
+        <!-- <div class="row">
             <div class="col-xs-4">
                 <h3>Email</h3>
             </div>
@@ -76,7 +112,7 @@
             Once you logged in, you will need to choose a four-digits passcode. You will need this passcode to log in
             into this app without needing to log in Passwork again.<br/>
             If you have an iPhone supporting Touch ID, you can use it to authenticate to the app.
-        </div>
+        </div> -->
     </div>
 
     <div class="page" id="page-passcode" style="display:none">
@@ -154,10 +190,9 @@
 </div>
 
 <script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/libs/trianglify.min.js"></script>
 <script type="text/javascript" src="js/libs/jquery.js"></script>
 <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/App.js"></script>
-
-
 </body>
 </html>

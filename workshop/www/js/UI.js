@@ -24,8 +24,6 @@ UI.showFirstPage = function (page) {
         $("#btn-menu-logout").css("display","none");
     }
 
-
-
 };
 
 UI.switchPage = function (page, back) {

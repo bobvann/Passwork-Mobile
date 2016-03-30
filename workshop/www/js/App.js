@@ -77,7 +77,19 @@ App.onDeviceReady = function(){
     }
 
     UI.init();
+
+    var pattern = Trianglify({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        cell_size: 40,
+        x_colors: ['#B43B03', '#EF6D1F', '#FEE0C2'],
+        variance: "1",
+        seed: 'cla34'
+    });
+
     console.log("Device Ready");
+
+    document.body.appendChild(pattern.canvas());
 
     if(Utils.getDevice()==Utils.DEVICES.IOS){
         $(".navbar").css("padding-top","15px").css("height","60px;").css("min-height","60px");
