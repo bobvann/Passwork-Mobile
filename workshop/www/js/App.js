@@ -181,12 +181,19 @@ App.init();
 
 
 setTimeout(function(){
-    if(touchid == undefined){
+    if(typeof touchid == 'undefined'){
         console.log("debug mode");
         //debug
         touchid = {};
         touchid.checkSupport=function(cb1,cb2){cb2()};
         touchid.authenticate=function(cb1,cb2,msg){cb2();};
+
+
+        navigator.notification = {};
+        navigator.notification.alert = function(message,callback,title,button){
+            alert(message);
+            callback && callback();
+        };
 
        App.onDeviceReady();
     }

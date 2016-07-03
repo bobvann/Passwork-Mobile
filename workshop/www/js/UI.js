@@ -11,6 +11,8 @@ UI.currentPage = '';
 UI.pagesWithBack = ["group"];
 UI.pagesWithLogout = ["main","group"];
 
+UI.previousGroup = "home";
+
 UI.showFirstPage = function (page) {
     $("#page-" + page).css("display", "");
     UI.currentPage = page;
@@ -55,7 +57,13 @@ UI.switchPage = function (page, back) {
 UI.onBackPressed = function(){
     switch(UI.currentPage){
         case 'group':
-            UI.switchPage("main",true);
+            if(UI.previousGroup=='home'){
+                UI.switchPage("main",true);
+            }else{
+                UI.switchPage("group",true);
+                UI.populateGroup(UI.previousGroup);
+                UI.previousGroup='home';
+            }
             break;
     }
 };
@@ -63,13 +71,13 @@ UI.onBackPressed = function(){
 UI.doShowPasswords = function (isFirst) {
     Passwork.data.groups.forEach(function (element, key, array) {
 
-        var passwordList = $("<li class='list-group-item li-group-item' data-key='"+ key +"'>"+ element.name +"</li>");
+        var passwordList = $("<li class='list-group-item li-group-item-main' data-key='"+ key +"'>"+ element.name +"</li>");
 
         $("#ul-main-groups").append(passwordList);
 
     });
 
-    $(".li-group-item").on("click",function(el){
+    $(".li-group-item-main").on("click",function(el){
         UI.populateGroup($(this).attr("data-key"));
 
         UI.switchPage("group");
@@ -84,6 +92,32 @@ UI.doShowPasswords = function (isFirst) {
 
 };
 
+UI.populateFolder = function(groupIndex,folderIndex){
+    var showedCount = 0;
+
+    var folder = Passwork.data.groups[groupIndex].folders[folderIndex];
+
+    $("#h1-group-title").html(folder.name);
+
+    $("#ul-group-passwords").html("");
+
+    folder.passwords.forEach(function(element,key,array){
+        showedCount++;
+        var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+" - <span class='sp-group-login'>" + element.login + "</span></a><a href='#' class='a-group-clipboard'><span class='glyphicon glyphicon-copy' data-key='" + key + "'></span></a></li>");
+        var underPL = $("<div class='collapse li-group-password' id='li-group-under-"+key+"'>" + "Nome: " + element.name + "<br/>"+ "Password: " + element.getPassword() + "<br/>" + " Description: " + element.description + "</div>");
+
+        $("#ul-group-passwords").append(passwordList);
+        $("#ul-group-passwords").append(underPL);
+
+    });
+
+    if(showedCount==0){
+        $("#ul-group-passwords").append( $("<li class='list-group-item'>No Passwords Available in this Group</li>") );
+        $("#ul-group-passwords").append( $("<li class='list-group-item'><a href='#'>Go Back</a></li>").on("click",function(){UI.onBackPressed();}) );
+    }
+
+};
+
 UI.populateGroup = function(groupIndex){
     var showedCount = 0;
     var group = Passwork.data.groups[groupIndex];
@@ -91,6 +125,23 @@ UI.populateGroup = function(groupIndex){
     $("#h1-group-title").html(group.name);
 
     $("#ul-group-passwords").html("");
+
+    group.folders.forEach(function(element,key,array){
+        showedCount++;
+        var passwordList = $("<li class='list-group-item li-group-item-int li-group-item-"+key+"' data-key='"+ key +"'>"+ element.name +"</li>");
+
+        //var passwordList = $("<li class='list-group-item'><a role='button' data-toggle='collapse' href='#li-group-under-" + key + "' aria-expanded='false' aria-controls='li-group-under-" + key + "'>" +element.name+" - <span class='sp-group-login'>" + element.login + "</span></a><a href='#' class='a-group-clipboard'><span class='glyphicon glyphicon-copy' data-key='" + key + "'></span></a></li>");
+        //var underPL = $("<div class='collapse li-group-password' id='li-group-under-"+key+"'>" + "Nome: " + element.name + "<br/>"+ "Password: " + element.getPassword() + "<br/>" + " Description: " + element.description + "</div>");
+
+        $("#ul-group-passwords").append(passwordList);
+
+
+        $(".li-group-item-"+key).on("click",function(el){
+            UI.populateFolder(groupIndex,key);
+            UI.previousGroup = groupIndex;
+            UI.switchPage("group");
+        });
+    });
 
 
     //description, name, login, getPassword()
@@ -118,7 +169,6 @@ UI.populateGroup = function(groupIndex){
         Dialogs.showShortBottomToast("Your password has been copied to your clipboard");
     })
 };
-
 
 UI.init = function(){
     $("#btn-login-submit").on("click", function () {
